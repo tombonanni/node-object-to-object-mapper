@@ -1,0 +1,54 @@
+{
+  "name": "object-compose",
+  "description": "Transform an object with reusable, composable functions",
+  "version": "1.0.0",
+  "homepage": "",
+  "author": {
+    "name": "Sudharshan Ravindran",
+    "email": "suddir@gmail.com",
+    "url": "https://github.com/suddi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suddi/object-compose"
+  },
+  "bugs": {
+    "url": "https://github.com/suddi/object-compose/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "object",
+    "map",
+    "mapping",
+    "transform",
+    "mapper",
+    "compose",
+    "json"
+  ],
+  "engines": {
+    "node": ">= 4.5.0",
+    "npm": ">= 2.14.7"
+  },
+  "scripts": {
+    "check-coverage": "istanbul check-coverage",
+    "coverage": "istanbul cover _mocha -- -R spec",
+    "lint": "eslint .",
+    "prepush": "npm run lint",
+    "test": "npm run lint && npm run coverage && npm run check-coverage"
+  },
+  "dependencies": {
+    "flat": "^2.0.1",
+    "load-directory": "^1.1.3",
+    "lodash": "^4.16.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-suddi": "^1.0.3",
+    "husky": "^0.11.7",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2"
+  },
+  "eslintConfig": {
+    "extends": "suddi/backend"
+  }
+}
