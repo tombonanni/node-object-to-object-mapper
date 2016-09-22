@@ -1,3 +1,3 @@
-# object-compose
+# object-to-object-mapper
 
-Transform an object with reusable, composable functions
+Map an object to another object with reusable, composable functions

@@ -1,7 +1,7 @@
 {
-  "name": "object-compose",
+  "name": "object-to-object-mapper",
   "description": "Transform an object with reusable, composable functions",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "homepage": "",
   "author": {
     "name": "Sudharshan Ravindran",
@@ -37,11 +37,11 @@
     "test": "npm run lint && npm run coverage && npm run check-coverage"
   },
   "dependencies": {
-    "flat": "^2.0.1",
     "load-directory": "^1.1.3",
     "lodash": "^4.16.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.5.0",
     "eslint-config-suddi": "^1.0.3",
     "husky": "^0.11.7",
