@@ -17,6 +17,7 @@
   },
   "license": "MIT",
   "keywords": [
+    "object-to-object",
     "object",
     "map",
     "mapping",
