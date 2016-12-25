@@ -33,10 +33,11 @@
   "scripts": {
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover _mocha -- -R spec",
-    "docs": "jsdoc filters -d docs",
+    "docs": "jsdoc -c ./jsdoc_conf.json",
     "doctest": "mocha --require jsdoctest --recursive filters",
     "lint": "eslint .",
     "prepush": "npm run lint",
+    "publish-docs": "git subtree push --prefix docs origin gh-pages",
     "test": "npm run lint && npm run doctest && npm run coverage && npm run check-coverage"
   },
   "dependencies": {

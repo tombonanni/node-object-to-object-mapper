@@ -155,7 +155,7 @@ function stringify(input) {
 }
 
 module.exports = {
-    toString: toStr,
+    toStr: toStr,
     toInt: toInt,
     toFloat: toFloat,
     toBool: toBool,
