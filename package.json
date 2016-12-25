@@ -1,7 +1,7 @@
 {
   "name": "object-to-object-mapper",
   "description": "Map an object to another object with reusable, composable functions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "",
   "author": {
     "name": "Sudharshan Ravindran",

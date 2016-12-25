@@ -10,4 +10,16 @@
 
 [![coverage](https://codecov.io/gh/suddi/node-object-to-object-mapper/branch/master/graphs/commits.svg)](https://codecov.io/gh/suddi/node-object-to-object-mapper)
 
-Map an object to another object with reusable, composable functions
+Object to Object mapping done right!
+
+````
+npm install object-to-object-mapper
+````
+
+## Documentation
+
+For full documentation, please visit [suddi.github.io/node-object-to-object-mapper](https://suddi.github.io/node-object-to-object-mapper)
+
+## Usage
+
+Coming soon...
