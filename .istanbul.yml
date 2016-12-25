@@ -1,8 +1,0 @@
-verbose: false
-check:
-    global:
-        statements: 80
-        branches: 30
-    each:
-        statements: 50
-        branches: 0

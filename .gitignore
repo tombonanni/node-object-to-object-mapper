@@ -1,8 +1,0 @@
-# Directories
-coverage/
-docs/
-node_modules/
-temp/
-
-# Files
-npm-debug.log
