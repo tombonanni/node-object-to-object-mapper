@@ -1,3 +1,7 @@
+# Directories
 coverage/
+docs/
 node_modules/
+
+# Files
 npm-debug.log

@@ -1,0 +1,6 @@
+filters
+--require jsdoctest
+--recursive
+
+test
+--recursive

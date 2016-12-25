@@ -1,25 +1,30 @@
 'use strict';
 
 const _ = require('lodash');
-const path = require('path');
 const expect = require('chai').expect;
-const Require = require('load-directory');
+const fs = require('fs');
+const path = require('path');
+const Mapper = require('../index');
 
-const ObjectCompose = require('../index');
-const Fixtures = Require.all(path.join(__dirname, '/fixtures'), {
-    map: Require.Strategies.Filename.snakeCase
-});
+function getFixturesPath(filename) {
+    const dir = 'fixtures';
+    if (filename) {
+        return path.join(__dirname, dir, filename);
+    }
+    return path.join(__dirname, dir);
+}
 
 describe('Integration testing object-to-object-mapper', function () {
-    const length = Object.keys(Fixtures).length;
-    for (let i = 0; i < length; i++) {
-        const index = i + 1;
-        const key = Object.keys(Fixtures)[i];
-        const value = Fixtures[key];
-        it('Case ' + index + ': Testing ' + key + ' mapping', function () {
-            const result = ObjectCompose.map(value.input, value.mapping);
+    const filenames = fs.readdirSync(getFixturesPath()).filter(function (filename) {
+        return filename.endsWith('.js');
+    });
 
-            expect(result).to.deep.eql(value.output);
+    filenames.map(function (filename, index) {
+        it(`CASE ${index + 1}: Testing ${filename}`, function () {
+            const test = require(getFixturesPath(filename));
+            const output = Mapper(test.getInput()).defineMapping(test.getMapping);
+
+            expect(output).to.deep.eql(test.getOutput());
         });
-    }
+    });
 });
