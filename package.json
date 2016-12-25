@@ -37,7 +37,7 @@
     "doctest": "mocha --require jsdoctest --recursive filters",
     "lint": "eslint .",
     "prepush": "npm run lint",
-    "publish-docs": "git subtree push --prefix docs origin gh-pages",
+    "publish-docs": "git subtree push --prefix docs origin gh-pages --force",
     "test": "npm run lint && npm run doctest && npm run coverage && npm run check-coverage"
   },
   "dependencies": {
