@@ -10,7 +10,6 @@ module.exports.getInput = function () {
     };
 };
 
-
 module.exports.getOutput = function () {
     return {
         A: [5],

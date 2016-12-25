@@ -4,7 +4,7 @@ const _ = require('lodash');
 const expect = require('chai').expect;
 const fs = require('fs');
 const path = require('path');
-const Mapper = require('../index');
+const mapper = require('../index');
 
 function getFixturesPath(filename) {
     const dir = 'fixtures';
@@ -21,10 +21,11 @@ describe('Integration testing object-to-object-mapper', function () {
 
     filenames.map(function (filename, index) {
         it(`CASE ${index + 1}: Testing ${filename}`, function () {
-            const test = require(getFixturesPath(filename));
-            const output = Mapper(test.getInput()).defineMapping(test.getMapping);
+            const T = require(getFixturesPath(filename));
+            const output = mapper(T.getInput()).defineMapping(T.getMapping);
 
-            expect(output).to.deep.eql(test.getOutput());
+            expect(output).to.deep.eql(T.getOutput());
         });
+        return filename;
     });
 });
