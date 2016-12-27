@@ -2,6 +2,8 @@
 
 const _ = require('lodash');
 
+const Wrapper = require('../utils/wrapper');
+
 /**
  * Flatten an input Array
  * @param  {*} input - current value
@@ -291,33 +293,79 @@ function map(input, object, func) {
     return _.map(input, func);
 }
 
+/**
+ * Loop through elements of an Array and filter out values
+ * @param  {*} input - current value
+ * @param  {Object} object - input object into mapper
+ * @param  {Function} func - function to execute on each element
+ * @return {Array} Array with elements filtered out
+ *
+ * @example
+ * filter([3, -4, -5], {}, function (a) { return a > 0; }) // => [3]
+ * filter('hello', {}, function (a) { return a === 'l'; }) // => ['l', 'l']
+ */
 function filter(input, object, func) {
     return _.filter(input, func);
 }
 
-function reduce(input, object, func) {
-    return _.reduce(input, func);
+/**
+ * Loop through elements of an Array and reduce to a single value
+ * @param  {*} input - current value
+ * @param  {Object} object - input object into mapper
+ * @param  {Function} func - function to execute on each element
+ * @param  {*} initial - initial value into reducer
+ * @return {*} reduced value
+ *
+ * @example
+ * reduce([3, 4, 5], {}, function (p, v) { return p + v; }, 0) // => 12
+ * reduce([3, 4, 5], {}, function (p, v) { return p + v; }, 10) // => 22
+ * reduce('hello', {}, function (p, v) { return p + v; }, 'world ') // => 'world hello'
+ */
+function reduce(input, object, func, initial) {
+    return _.reduce(input, func, initial);
 }
 
+/**
+ * Loop through elements to sort them
+ * @param  {*} input - current value
+ * @param  {Object} object - input object into mapper
+ * @param  {Function} func - function to execute on each element
+ * @return {Array} sorted Array
+ *
+ * @example
+ * sort(4) // => 4
+ * sort(true) // => true
+ * sort(Infinity) // => Infinity
+ * sort(null) // =>
+ * sort() // =>
+ * sort(NaN) // => NaN
+ * sort(4.5) // => 4.5
+ * sort('hello') // => 'hello'
+ * sort([300, 4, 15]) // => [15, 300, 4]
+ * sort([300, 4, 15], {}, function (a, b) { return a - b; }) // => [4, 15, 300]
+ * sort([300, 4, 15], {}, function (a, b) { return b - a; }) // => [300, 15, 4]
+ * sort([300, 4, 15], {}, function (a, b) { return b - a; }) // => [300, 15, 4]
+ * sort(['h', 'e', 'l', 'l', 'o']) // => ['e', 'h', 'l', 'l', 'o']
+ */
 function sort(input, object, func) {
-    return _.sort(input, func);
+    return Array.isArray(input) ? input.sort(func) : input;
 }
 
 module.exports = {
-    flatten: flatten,
-    unique: unique,
-    sum: sum,
-    child: child,
-    compact: compact,
-    concat: concat,
-    join: join,
-    reverse: reverse,
-    slice: slice,
-    length: length,
-    find: find,
-    findWhere: findWhere,
-    map: map,
-    filter: filter,
-    reduce: reduce,
-    sort: sort
+    flatten: Wrapper.valueHandler(flatten),
+    unique: Wrapper.valueHandler(unique),
+    sum: Wrapper.valueHandler(sum),
+    child: Wrapper.valueHandler(child),
+    compact: Wrapper.valueHandler(compact),
+    concat: Wrapper.valueHandler(concat),
+    join: Wrapper.valueHandler(join),
+    reverse: Wrapper.valueHandler(reverse),
+    slice: Wrapper.valueHandler(slice),
+    length: Wrapper.valueHandler(length),
+    find: Wrapper.valueHandler(find),
+    findWhere: Wrapper.valueHandler(findWhere),
+    map: Wrapper.valueHandler(map),
+    filter: Wrapper.valueHandler(filter),
+    reduce: Wrapper.valueHandler(reduce),
+    sort: Wrapper.valueHandler(sort)
 };

@@ -1,19 +1,6 @@
 'use strict';
 
-function wrapFunc(func) {
-    return function () {
-        const args = Array.prototype.slice.call(arguments);
-        try {
-            this.value = func.apply(null, [
-                this.value,
-                this.__object__
-            ].concat(args));
-        } catch (error) {
-            this.__error__ = this.__error__ || error;
-        }
-        return this;
-    };
-}
+const Wrapper = require('../utils/wrapper');
 
 function wrapFuncs(ctx, funcKeys, funcs, index) {
     if (index >= funcKeys.length) {
@@ -23,7 +10,7 @@ function wrapFuncs(ctx, funcKeys, funcs, index) {
     const currentKey = funcKeys[index];
     const func = funcs[currentKey];
     const newFuncs = funcs;
-    newFuncs[currentKey] = wrapFunc(func).bind(ctx);
+    newFuncs[currentKey] = Wrapper.valueHandler(func).bind(ctx);
     return wrapFuncs(ctx, funcKeys, newFuncs, index + 1);
 }
 
@@ -31,18 +18,21 @@ function wrapFilters(ctx, funcs) {
     return wrapFuncs(ctx, Object.keys(funcs), funcs, 0);
 }
 
-module.exports.get = function (object, customFilters) {
-    const ctx = {
+function getDefaultContext(object) {
+    return {
         value: null,
         __object__: object,
-        __error__: null
+        __error__: null,
+        __path__: ''
     };
-    Object.assign(
-        ctx,
-        wrapFilters(ctx, require('./array')),
-        wrapFilters(ctx, require('./convert')),
-        wrapFilters(ctx, require('./value')),
-        wrapFilters(ctx, customFilters)
+}
+
+module.exports.get = function (object, customFilters) {
+    return Object.assign(
+        getDefaultContext(object),
+        require('./array'),
+        require('./convert'),
+        require('./value'),
+        wrapFilters({}, customFilters)
     );
-    return ctx;
 };

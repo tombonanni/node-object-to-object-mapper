@@ -2,6 +2,8 @@
 
 const _ = require('lodash');
 
+const Wrapper = require('../utils/wrapper');
+
 /**
  * Retrieve a value from the mapping object
  * @param  {*} input - current value
@@ -35,6 +37,6 @@ function set(input, object, setValue) {
 }
 
 module.exports = {
-    get: get,
-    set: set
+    get: Wrapper.pathHandler(get),
+    set: Wrapper.valueHandler(set)
 };

@@ -1,5 +1,7 @@
 'use strict';
 
+const Wrapper = require('../utils/wrapper');
+
 /**
  * Convert a value to string
  * @param {*} input - current value
@@ -155,11 +157,11 @@ function stringify(input) {
 }
 
 module.exports = {
-    toStr: toStr,
-    toInt: toInt,
-    toFloat: toFloat,
-    toBool: toBool,
-    toArray: toArray,
-    toObject: toObject,
-    stringify: stringify
+    toStr: Wrapper.valueHandler(toStr),
+    toInt: Wrapper.valueHandler(toInt),
+    toFloat: Wrapper.valueHandler(toFloat),
+    toBool: Wrapper.valueHandler(toBool),
+    toArray: Wrapper.valueHandler(toArray),
+    toObject: Wrapper.valueHandler(toObject),
+    stringify: Wrapper.valueHandler(stringify)
 };
