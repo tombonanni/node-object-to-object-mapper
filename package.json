@@ -51,7 +51,9 @@
     "istanbul": "^0.4.0",
     "jsdoc": "^3.0.0",
     "jsdoctest": "^1.0.0",
-    "mocha": "^3.0.0"
+    "mocha": "^3.0.0",
+    "rewire": "^2.5.2",
+    "sinon": "^1.17.6"
   },
   "eslintConfig": {
     "extends": "suddi/backend"
