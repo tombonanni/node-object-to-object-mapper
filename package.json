@@ -1,8 +1,8 @@
 {
   "name": "object-to-object-mapper",
   "description": "Map an object to another object with reusable, composable functions",
-  "version": "1.0.3",
-  "homepage": "",
+  "version": "1.0.4",
+  "homepage": "https://github.com/suddi/node-object-to-object-mapper",
   "author": {
     "name": "Sudharshan Ravindran",
     "email": "suddir@gmail.com",
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/suddi/object-compose"
+    "url": "https://github.com/suddi/node-object-to-object-mapper"
   },
   "bugs": {
-    "url": "https://github.com/suddi/object-compose/issues"
+    "url": "https://github.com/suddi/node-object-to-object-mapper/issues"
   },
   "license": "MIT",
   "keywords": [
