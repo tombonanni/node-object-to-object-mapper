@@ -1,7 +1,7 @@
 {
   "name": "object-to-object-mapper",
   "description": "Map an object to another object with reusable, composable functions",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "homepage": "https://github.com/suddi/node-object-to-object-mapper",
   "author": {
     "name": "Sudharshan Ravindran",
@@ -33,11 +33,12 @@
   "scripts": {
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover _mocha -- -R spec",
-    "docs": "jsdoc -c ./jsdoc_conf.json",
+    "docs": "jsdoc -c ./jsdoc.json",
     "doctest": "mocha --require jsdoctest --recursive filters",
     "lint": "eslint .",
     "prepush": "npm run lint",
     "publish-docs": "git subtree push --prefix docs origin gh-pages",
+    "report": "istanbul report --verbose",
     "test": "npm run lint && npm run doctest && npm run coverage && npm run check-coverage"
   },
   "dependencies": {

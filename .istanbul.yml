@@ -1,4 +1,8 @@
 verbose: false
+reporting:
+    reports:
+        - lcov
+        - text
 check:
     global:
         statements: 80

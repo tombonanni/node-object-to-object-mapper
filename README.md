@@ -13,7 +13,7 @@
 Object to Object mapping done right!
 
 ````
-npm install object-to-object-mapper
+npm install --save object-to-object-mapper
 ````
 
 ## Documentation
