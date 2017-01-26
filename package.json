@@ -1,7 +1,7 @@
 {
   "name": "object-to-object-mapper",
   "description": "Map an object to another object with reusable, composable functions",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "homepage": "https://github.com/suddi/node-object-to-object-mapper",
   "author": {
     "name": "Sudharshan Ravindran",
@@ -48,7 +48,7 @@
     "chai": "^3.0.0",
     "eslint": "^3.0.0",
     "eslint-config-suddi": "^3.0.0",
-    "husky": "^0.12.0",
+    "husky": "^0.13.0",
     "istanbul": "^0.4.0",
     "jsdoc": "^3.0.0",
     "jsdoctest": "^1.0.0",
