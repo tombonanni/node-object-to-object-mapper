@@ -36,7 +36,7 @@
     "docs": "jsdoc -c ./jsdoc.json",
     "doctest": "mocha --require jsdoctest --recursive filters",
     "lint": "eslint .",
-    "prepush": "npm run lint",
+    "prepush": "npm test",
     "publish-docs": "git subtree push --prefix docs origin gh-pages",
     "report": "istanbul report --verbose",
     "test": "npm run lint && npm run doctest && npm run coverage && npm run check-coverage"
