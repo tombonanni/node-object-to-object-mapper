@@ -1,8 +1,8 @@
 {
   "name": "object-to-object-mapper",
   "description": "Map an object to another object with reusable, composable functions",
-  "version": "1.0.11",
-  "homepage": "https://github.com/suddi/node-object-to-object-mapper",
+  "version": "1.0.12",
+  "homepage": "https://www.npmjs.com/package/object-to-object-mapper",
   "author": {
     "name": "Sudharshan Ravindran",
     "email": "mail@suddi.io",
@@ -51,7 +51,7 @@
     "husky": "^0.13.0",
     "istanbul": "^0.4.0",
     "jsdoc": "^3.0.0",
-    "jsdoctest": "^1.0.0",
+    "jsdoctest": "git+ssh://git@github.com:yamadapc/jsdoctest.git",
     "mocha": "^3.0.0",
     "rewire": "^2.0.0",
     "sinon": "^2.0.0"
