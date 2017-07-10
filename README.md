@@ -1,6 +1,6 @@
 # object-to-object-mapper
 
-[![CircleCI](https://img.shields.io/circleci/project/suddi/node-object-to-object-mapper.svg)](https://circleci.com/gh/suddi/node-object-to-object-mapper)
+[![CircleCI](https://img.shields.io/circleci/project/suddi/node-object-to-object-mapper/master.svg)](https://circleci.com/gh/suddi/node-object-to-object-mapper)
 [![codecov](https://codecov.io/gh/suddi/node-object-to-object-mapper/branch/master/graph/badge.svg)](https://codecov.io/gh/suddi/node-object-to-object-mapper)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1367f79373794c54b2125c4cc29244fd)](https://www.codacy.com/app/suddir/node-object-to-object-mapper)
 [![npm](https://img.shields.io/npm/v/object-to-object-mapper.svg)](https://www.npmjs.com/package/object-to-object-mapper)
