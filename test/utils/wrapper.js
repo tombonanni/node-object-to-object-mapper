@@ -61,8 +61,8 @@ describe('Testing Wrapper.valueHandler', function () {
         const expectedResult = instanceVariables.value + instanceVariables.__object__ +
             args[0] + args[1] + args[2] + args[4] + args[5];
 
-        const output = Wrapper.valueHandler(exec).call(instanceVariables,
-            args[0], args[1], args[2], args[3], args[4], args[5]
+        const output = Wrapper.valueHandler(exec).call(
+            instanceVariables, args[0], args[1], args[2], args[3], args[4], args[5]
         );
 
         expect(output).to.deep.eql({
@@ -178,8 +178,8 @@ describe('Testing Wrapper.pathHandler', function () {
         const expectedResult = instanceVariables.value + instanceVariables.__object__ +
             args[0] + args[1] + args[2] + args[4] + args[5];
 
-        const output = Wrapper.pathHandler(exec).call(instanceVariables,
-            args[0], args[1], args[2], args[3], args[4], args[5]
+        const output = Wrapper.pathHandler(exec).call(
+            instanceVariables, args[0], args[1], args[2], args[3], args[4], args[5]
         );
 
         expect(output).to.deep.eql({
