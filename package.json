@@ -1,8 +1,8 @@
 {
   "name": "object-to-object-mapper",
   "description": "Map an object to another object with reusable, composable functions",
-  "version": "1.0.11",
-  "homepage": "https://github.com/suddi/node-object-to-object-mapper",
+  "version": "1.0.13",
+  "homepage": "https://www.npmjs.com/package/object-to-object-mapper",
   "author": {
     "name": "Sudharshan Ravindran",
     "email": "mail@suddi.io",
@@ -45,16 +45,16 @@
     "lodash": "^4.0.0"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
+    "chai": "^4.0.0",
     "eslint": "^4.0.0",
     "eslint-config-suddi": "^4.0.0",
     "husky": "^0.14.0",
     "istanbul": "^0.4.0",
-    "jsdoc": "^3.0.0",
-    "jsdoctest": "^1.0.0",
+    "jsdoc": "^3.5.1",
+    "jsdoctest": "git+ssh://git@github.com/yamadapc/jsdoctest.git",
     "mocha": "^3.0.0",
     "rewire": "^2.0.0",
-    "sinon": "^2.0.0"
+    "sinon": "^3.0.0"
   },
   "eslintConfig": {
     "extends": "suddi/backend"

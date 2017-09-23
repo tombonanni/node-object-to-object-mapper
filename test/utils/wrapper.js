@@ -43,12 +43,12 @@ describe('Testing Wrapper.valueHandler', function () {
         const expectedResult = new Error(errorMessage);
         const output = Wrapper.valueHandler(exec).call(instanceVariables);
 
-        expect(output).to.deep.eql({
+        expect(JSON.stringify(output)).to.be.eql(JSON.stringify({
             value: instanceVariables.value,
             __object__: instanceVariables.__object__,
             __error__: expectedResult,
             __path__: instanceVariables.__path__
-        });
+        }));
     });
 
     it('CASE 3: Handles arguments correctly', function () {
@@ -100,7 +100,7 @@ describe('Testing Wrapper.errorHandler', function () {
         const expectedResult = new Error(`${instanceVariables.__path__}: ${errorMessage}`);
         const output = this.run(this.exec, instanceVariables);
 
-        expect(output).to.eql(expectedResult);
+        expect(output.message).to.eql(expectedResult.message);
     });
 
     it('CASE 2: Handles when no error is thrown', function () {
@@ -127,7 +127,7 @@ describe('Testing Wrapper.errorHandler', function () {
         );
         const output = this.run(exec, instanceVariables, args);
 
-        expect(output).to.eql(expectedResult);
+        expect(output.message).to.eql(expectedResult.message);
     });
 });
 
@@ -160,12 +160,12 @@ describe('Testing Wrapper.pathHandler', function () {
         const expectedResult = new Error(errorMessage);
         const output = Wrapper.pathHandler(exec).call(instanceVariables);
 
-        expect(output).to.deep.eql({
+        expect(JSON.stringify(output)).to.be.eql(JSON.stringify({
             value: instanceVariables.value,
             __object__: instanceVariables.__object__,
             __error__: expectedResult,
             __path__: instanceVariables.__path__
-        });
+        }));
     });
 
     it('CASE 3: Handles arguments correctly', function () {
