@@ -50,7 +50,7 @@
     "eslint-config-suddi": "^4.0.0",
     "husky": "^0.14.0",
     "istanbul": "^0.4.0",
-    "jsdoc": "^3.5.1",
+    "jsdoc": "^3.0.0",
     "jsdoctest": "git+ssh://git@github.com/yamadapc/jsdoctest.git",
     "mocha": "^3.0.0",
     "rewire": "^2.0.0",
