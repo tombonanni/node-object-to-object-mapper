@@ -39,7 +39,8 @@
     "prepush": "npm test",
     "publish-docs": "git subtree push --prefix docs origin gh-pages",
     "report": "istanbul report --verbose",
-    "test": "npm run lint && npm run doctest && npm run coverage && npm run check-coverage"
+    "security-check": "nsp check --output summary",
+    "test": "npm run lint && npm run security-check && npm run doctest && npm run coverage && npm run check-coverage"
   },
   "dependencies": {
     "lodash": "^4.0.0"
@@ -51,8 +52,9 @@
     "husky": "^0.14.0",
     "istanbul": "^0.4.0",
     "jsdoc": "^3.0.0",
-    "jsdoctest": "git+ssh://git@github.com/yamadapc/jsdoctest.git",
+    "jsdoctest": "^1.0.0",
     "mocha": "^3.0.0",
+    "nsp": "^2.8.0",
     "rewire": "^2.0.0",
     "sinon": "^4.0.0"
   },
