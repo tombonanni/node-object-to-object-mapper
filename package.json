@@ -1,7 +1,7 @@
 {
   "name": "object-to-object-mapper",
   "description": "Map an object to another object with reusable, composable functions",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "homepage": "https://www.npmjs.com/package/object-to-object-mapper",
   "author": {
     "name": "Sudharshan Ravindran",
